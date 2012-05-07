@@ -3,6 +3,7 @@ require "ffi_gen"
 FFIGen.generate(
   ruby_module: "FluidSynth",
   ffi_lib: "fluidsynth",
+  prefixes: ["fluid_"],
   headers: [
     "fluidsynth.h",
     "fluidsynth/audio.h",		

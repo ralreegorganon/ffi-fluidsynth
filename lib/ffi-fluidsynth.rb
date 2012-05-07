@@ -128,7 +128,7 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_types_enum).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:types_enum).</em>
   # 
   # === Options:
   # :num_ ::
@@ -140,10 +140,10 @@ module FluidSynth
   # :set_ ::
   #   < String
   # 
-  # @method _enum_fluid_types_enum_
+  # @method _enum_types_enum_
   # @return [Symbol]
   # @scope class
-  enum :fluid_types_enum, [
+  enum :types_enum, [
     :num_,
     :int_,
     :str_,
@@ -167,170 +167,170 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_settings_get_type(settings, name)
+  # @method settings_get_type(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_get_type, :fluid_settings_get_type, [FluidHashtableT, :string], :int
+  attach_function :settings_get_type, :fluid_settings_get_type, [FluidHashtableT, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_get_hints(settings, name)
+  # @method settings_get_hints(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_get_hints, :fluid_settings_get_hints, [FluidHashtableT, :string], :int
+  attach_function :settings_get_hints, :fluid_settings_get_hints, [FluidHashtableT, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_is_realtime(settings, name)
+  # @method settings_is_realtime(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_is_realtime, :fluid_settings_is_realtime, [FluidHashtableT, :string], :int
+  attach_function :settings_is_realtime, :fluid_settings_is_realtime, [FluidHashtableT, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_setstr(settings, name, str)
+  # @method settings_setstr(settings, name, str)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [String] str 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_setstr, :fluid_settings_setstr, [FluidHashtableT, :string, :string], :int
+  attach_function :settings_setstr, :fluid_settings_setstr, [FluidHashtableT, :string, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_copystr(settings, name, str, len)
+  # @method settings_copystr(settings, name, str, len)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [String] str 
   # @param [Integer] len 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_copystr, :fluid_settings_copystr, [FluidHashtableT, :string, :string, :int], :int
+  attach_function :settings_copystr, :fluid_settings_copystr, [FluidHashtableT, :string, :string, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_dupstr(settings, name, str)
+  # @method settings_dupstr(settings, name, str)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(**Char_S)] str 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_dupstr, :fluid_settings_dupstr, [FluidHashtableT, :string, :pointer], :int
+  attach_function :settings_dupstr, :fluid_settings_dupstr, [FluidHashtableT, :string, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getstr(settings, name, str)
+  # @method settings_getstr(settings, name, str)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(**Char_S)] str 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_getstr, :fluid_settings_getstr, [FluidHashtableT, :string, :pointer], :int
+  attach_function :settings_getstr, :fluid_settings_getstr, [FluidHashtableT, :string, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getstr_default(settings, name)
+  # @method settings_getstr_default(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [String] 
   # @scope class
-  attach_function :fluid_settings_getstr_default, :fluid_settings_getstr_default, [FluidHashtableT, :string], :string
+  attach_function :settings_getstr_default, :fluid_settings_getstr_default, [FluidHashtableT, :string], :string
   
   # (Not documented)
   # 
-  # @method fluid_settings_str_equal(settings, name, value)
+  # @method settings_str_equal(settings, name, value)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [String] value 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_str_equal, :fluid_settings_str_equal, [FluidHashtableT, :string, :string], :int
+  attach_function :settings_str_equal, :fluid_settings_str_equal, [FluidHashtableT, :string, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_setnum(settings, name, val)
+  # @method settings_setnum(settings, name, val)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [Float] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_setnum, :fluid_settings_setnum, [FluidHashtableT, :string, :double], :int
+  attach_function :settings_setnum, :fluid_settings_setnum, [FluidHashtableT, :string, :double], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getnum(settings, name, val)
+  # @method settings_getnum(settings, name, val)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(*Double)] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_getnum, :fluid_settings_getnum, [FluidHashtableT, :string, :pointer], :int
+  attach_function :settings_getnum, :fluid_settings_getnum, [FluidHashtableT, :string, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getnum_default(settings, name)
+  # @method settings_getnum_default(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_settings_getnum_default, :fluid_settings_getnum_default, [FluidHashtableT, :string], :double
+  attach_function :settings_getnum_default, :fluid_settings_getnum_default, [FluidHashtableT, :string], :double
   
   # (Not documented)
   # 
-  # @method fluid_settings_getnum_range(settings, name, min, max)
+  # @method settings_getnum_range(settings, name, min, max)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(*Double)] min 
   # @param [FFI::Pointer(*Double)] max 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_settings_getnum_range, :fluid_settings_getnum_range, [FluidHashtableT, :string, :pointer, :pointer], :void
+  attach_function :settings_getnum_range, :fluid_settings_getnum_range, [FluidHashtableT, :string, :pointer, :pointer], :void
   
   # (Not documented)
   # 
-  # @method fluid_settings_setint(settings, name, val)
+  # @method settings_setint(settings, name, val)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_setint, :fluid_settings_setint, [FluidHashtableT, :string, :int], :int
+  attach_function :settings_setint, :fluid_settings_setint, [FluidHashtableT, :string, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getint(settings, name, val)
+  # @method settings_getint(settings, name, val)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(*Int)] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_getint, :fluid_settings_getint, [FluidHashtableT, :string, :pointer], :int
+  attach_function :settings_getint, :fluid_settings_getint, [FluidHashtableT, :string, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getint_default(settings, name)
+  # @method settings_getint_default(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_getint_default, :fluid_settings_getint_default, [FluidHashtableT, :string], :int
+  attach_function :settings_getint_default, :fluid_settings_getint_default, [FluidHashtableT, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_getint_range(settings, name, min, max)
+  # @method settings_getint_range(settings, name, min, max)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(*Int)] min 
   # @param [FFI::Pointer(*Int)] max 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_settings_getint_range, :fluid_settings_getint_range, [FluidHashtableT, :string, :pointer, :pointer], :void
+  attach_function :settings_getint_range, :fluid_settings_getint_range, [FluidHashtableT, :string, :pointer, :pointer], :void
   
   # Callback function type used with fluid_settings_foreach_option()
   # @param data User defined data pointer
@@ -339,42 +339,42 @@ module FluidSynth
   # 
   # <em>This entry is only for documentation and no real method.</em>
   # 
-  # @method _callback_fluid_settings_foreach_option_t_(name, option)
+  # @method _callback_settings_foreach_option_t_(name, option)
   # @param [String] name 
   # @param [String] option 
   # @return [FFI::Pointer(*Void)] 
   # @scope class
-  callback :fluid_settings_foreach_option_t, [:string, :string], :pointer
+  callback :settings_foreach_option_t, [:string, :string], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_settings_foreach_option(settings, name, data, func)
+  # @method settings_foreach_option(settings, name, data, func)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [FFI::Pointer(*Void)] data 
-  # @param [Proc(_callback_fluid_settings_foreach_option_t_)] func 
+  # @param [Proc(_callback_settings_foreach_option_t_)] func 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_settings_foreach_option, :fluid_settings_foreach_option, [FluidHashtableT, :string, :pointer, :fluid_settings_foreach_option_t], :void
+  attach_function :settings_foreach_option, :fluid_settings_foreach_option, [FluidHashtableT, :string, :pointer, :settings_foreach_option_t], :void
   
   # (Not documented)
   # 
-  # @method fluid_settings_option_count(settings, name)
+  # @method settings_option_count(settings, name)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_settings_option_count, :fluid_settings_option_count, [FluidHashtableT, :string], :int
+  attach_function :settings_option_count, :fluid_settings_option_count, [FluidHashtableT, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_settings_option_concat(settings, name, separator)
+  # @method settings_option_concat(settings, name, separator)
   # @param [FluidHashtableT] settings 
   # @param [String] name 
   # @param [String] separator 
   # @return [String] 
   # @scope class
-  attach_function :fluid_settings_option_concat, :fluid_settings_option_concat, [FluidHashtableT, :string, :string], :string
+  attach_function :settings_option_concat, :fluid_settings_option_concat, [FluidHashtableT, :string, :string], :string
   
   # Callback function type used with fluid_settings_foreach()
   # @param data User defined data pointer
@@ -383,22 +383,22 @@ module FluidSynth
   # 
   # <em>This entry is only for documentation and no real method.</em>
   # 
-  # @method _callback_fluid_settings_foreach_t_(name, type)
+  # @method _callback_settings_foreach_t_(name, type)
   # @param [String] name 
   # @param [Integer] type 
   # @return [FFI::Pointer(*Void)] 
   # @scope class
-  callback :fluid_settings_foreach_t, [:string, :int], :pointer
+  callback :settings_foreach_t, [:string, :int], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_settings_foreach(settings, data, func)
+  # @method settings_foreach(settings, data, func)
   # @param [FluidHashtableT] settings 
   # @param [FFI::Pointer(*Void)] data 
-  # @param [Proc(_callback_fluid_settings_foreach_t_)] func 
+  # @param [Proc(_callback_settings_foreach_t_)] func 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_settings_foreach, :fluid_settings_foreach, [FluidHashtableT, :pointer, :fluid_settings_foreach_t], :void
+  attach_function :settings_foreach, :fluid_settings_foreach, [FluidHashtableT, :pointer, :settings_foreach_t], :void
   
   # < Synthesizer instance
   # 
@@ -442,58 +442,58 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_settings(synth)
+  # @method synth_get_settings(synth)
   # @param [FluidSynthT] synth 
   # @return [FluidHashtableT] 
   # @scope class
-  attach_function :fluid_synth_get_settings, :fluid_synth_get_settings, [FluidSynthT], FluidHashtableT
+  attach_function :synth_get_settings, :fluid_synth_get_settings, [FluidSynthT], FluidHashtableT
   
   # MIDI channel messages
   # 
-  # @method fluid_synth_noteon(synth, chan, key, vel)
+  # @method synth_noteon(synth, chan, key, vel)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] key 
   # @param [Integer] vel 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_noteon, :fluid_synth_noteon, [FluidSynthT, :int, :int, :int], :int
+  attach_function :synth_noteon, :fluid_synth_noteon, [FluidSynthT, :int, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_noteoff(synth, chan, key)
+  # @method synth_noteoff(synth, chan, key)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] key 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_noteoff, :fluid_synth_noteoff, [FluidSynthT, :int, :int], :int
+  attach_function :synth_noteoff, :fluid_synth_noteoff, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_cc(synth, chan, ctrl, val)
+  # @method synth_cc(synth, chan, ctrl, val)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] ctrl 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_cc, :fluid_synth_cc, [FluidSynthT, :int, :int, :int], :int
+  attach_function :synth_cc, :fluid_synth_cc, [FluidSynthT, :int, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_cc(synth, chan, ctrl, pval)
+  # @method synth_get_cc(synth, chan, ctrl, pval)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] ctrl 
   # @param [FFI::Pointer(*Int)] pval 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_cc, :fluid_synth_get_cc, [FluidSynthT, :int, :int, :pointer], :int
+  attach_function :synth_get_cc, :fluid_synth_get_cc, [FluidSynthT, :int, :int, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_sysex(synth, data, len, response, response_len, handled, dryrun)
+  # @method synth_sysex(synth, data, len, response, response_len, handled, dryrun)
   # @param [FluidSynthT] synth 
   # @param [String] data 
   # @param [Integer] len 
@@ -503,91 +503,91 @@ module FluidSynth
   # @param [Integer] dryrun 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_sysex, :fluid_synth_sysex, [FluidSynthT, :string, :int, :string, :pointer, :pointer, :int], :int
+  attach_function :synth_sysex, :fluid_synth_sysex, [FluidSynthT, :string, :int, :string, :pointer, :pointer, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_pitch_bend(synth, chan, val)
+  # @method synth_pitch_bend(synth, chan, val)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_pitch_bend, :fluid_synth_pitch_bend, [FluidSynthT, :int, :int], :int
+  attach_function :synth_pitch_bend, :fluid_synth_pitch_bend, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_pitch_bend(synth, chan, ppitch_bend)
+  # @method synth_get_pitch_bend(synth, chan, ppitch_bend)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [FFI::Pointer(*Int)] ppitch_bend 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_pitch_bend, :fluid_synth_get_pitch_bend, [FluidSynthT, :int, :pointer], :int
+  attach_function :synth_get_pitch_bend, :fluid_synth_get_pitch_bend, [FluidSynthT, :int, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_pitch_wheel_sens(synth, chan, val)
+  # @method synth_pitch_wheel_sens(synth, chan, val)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_pitch_wheel_sens, :fluid_synth_pitch_wheel_sens, [FluidSynthT, :int, :int], :int
+  attach_function :synth_pitch_wheel_sens, :fluid_synth_pitch_wheel_sens, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_pitch_wheel_sens(synth, chan, pval)
+  # @method synth_get_pitch_wheel_sens(synth, chan, pval)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [FFI::Pointer(*Int)] pval 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_pitch_wheel_sens, :fluid_synth_get_pitch_wheel_sens, [FluidSynthT, :int, :pointer], :int
+  attach_function :synth_get_pitch_wheel_sens, :fluid_synth_get_pitch_wheel_sens, [FluidSynthT, :int, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_program_change(synth, chan, program)
+  # @method synth_program_change(synth, chan, program)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] program 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_program_change, :fluid_synth_program_change, [FluidSynthT, :int, :int], :int
+  attach_function :synth_program_change, :fluid_synth_program_change, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_channel_pressure(synth, chan, val)
+  # @method synth_channel_pressure(synth, chan, val)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_channel_pressure, :fluid_synth_channel_pressure, [FluidSynthT, :int, :int], :int
+  attach_function :synth_channel_pressure, :fluid_synth_channel_pressure, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_bank_select(synth, chan, bank)
+  # @method synth_bank_select(synth, chan, bank)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] bank 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_bank_select, :fluid_synth_bank_select, [FluidSynthT, :int, :uint], :int
+  attach_function :synth_bank_select, :fluid_synth_bank_select, [FluidSynthT, :int, :uint], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_sfont_select(synth, chan, sfont_id)
+  # @method synth_sfont_select(synth, chan, sfont_id)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] sfont_id 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_sfont_select, :fluid_synth_sfont_select, [FluidSynthT, :int, :uint], :int
+  attach_function :synth_sfont_select, :fluid_synth_sfont_select, [FluidSynthT, :int, :uint], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_program_select(synth, chan, sfont_id, bank_num, preset_num)
+  # @method synth_program_select(synth, chan, sfont_id, bank_num, preset_num)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] sfont_id 
@@ -595,11 +595,11 @@ module FluidSynth
   # @param [Integer] preset_num 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_program_select, :fluid_synth_program_select, [FluidSynthT, :int, :uint, :uint, :uint], :int
+  attach_function :synth_program_select, :fluid_synth_program_select, [FluidSynthT, :int, :uint, :uint, :uint], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_program_select_by_sfont_name(synth, chan, sfont_name, bank_num, preset_num)
+  # @method synth_program_select_by_sfont_name(synth, chan, sfont_name, bank_num, preset_num)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [String] sfont_name 
@@ -607,11 +607,11 @@ module FluidSynth
   # @param [Integer] preset_num 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_program_select_by_sfont_name, :fluid_synth_program_select_by_sfont_name, [FluidSynthT, :int, :string, :uint, :uint], :int
+  attach_function :synth_program_select_by_sfont_name, :fluid_synth_program_select_by_sfont_name, [FluidSynthT, :int, :string, :uint, :uint], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_program(synth, chan, sfont_id, bank_num, preset_num)
+  # @method synth_get_program(synth, chan, sfont_id, bank_num, preset_num)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [FFI::Pointer(*UInt)] sfont_id 
@@ -619,64 +619,64 @@ module FluidSynth
   # @param [FFI::Pointer(*UInt)] preset_num 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_program, :fluid_synth_get_program, [FluidSynthT, :int, :pointer, :pointer, :pointer], :int
+  attach_function :synth_get_program, :fluid_synth_get_program, [FluidSynthT, :int, :pointer, :pointer, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_unset_program(synth, chan)
+  # @method synth_unset_program(synth, chan)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_unset_program, :fluid_synth_unset_program, [FluidSynthT, :int], :int
+  attach_function :synth_unset_program, :fluid_synth_unset_program, [FluidSynthT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_channel_info(synth, chan, info)
+  # @method synth_get_channel_info(synth, chan, info)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [FluidSynthChannelInfoT] info 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_channel_info, :fluid_synth_get_channel_info, [FluidSynthT, :int, FluidSynthChannelInfoT], :int
+  attach_function :synth_get_channel_info, :fluid_synth_get_channel_info, [FluidSynthT, :int, FluidSynthChannelInfoT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_program_reset(synth)
+  # @method synth_program_reset(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_program_reset, :fluid_synth_program_reset, [FluidSynthT], :int
+  attach_function :synth_program_reset, :fluid_synth_program_reset, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_system_reset(synth)
+  # @method synth_system_reset(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_system_reset, :fluid_synth_system_reset, [FluidSynthT], :int
+  attach_function :synth_system_reset, :fluid_synth_system_reset, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_all_notes_off(synth, chan)
-  # @param [FluidSynthT] synth 
-  # @param [Integer] chan 
-  # @return [Integer] 
-  # @scope class
-  attach_function :fluid_synth_all_notes_off, :fluid_synth_all_notes_off, [FluidSynthT, :int], :int
-  
-  # (Not documented)
-  # 
-  # @method fluid_synth_all_sounds_off(synth, chan)
+  # @method synth_all_notes_off(synth, chan)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_all_sounds_off, :fluid_synth_all_sounds_off, [FluidSynthT, :int], :int
+  attach_function :synth_all_notes_off, :fluid_synth_all_notes_off, [FluidSynthT, :int], :int
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_midi_channel_type).</em>
+  # @method synth_all_sounds_off(synth, chan)
+  # @param [FluidSynthT] synth 
+  # @param [Integer] chan 
+  # @return [Integer] 
+  # @scope class
+  attach_function :synth_all_sounds_off, :fluid_synth_all_sounds_off, [FluidSynthT, :int], :int
+  
+  # (Not documented)
+  # 
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:midi_channel_type).</em>
   # 
   # === Options:
   # :melodic ::
@@ -684,160 +684,160 @@ module FluidSynth
   # :drum ::
   #   
   # 
-  # @method _enum_fluid_midi_channel_type_
+  # @method _enum_midi_channel_type_
   # @return [Symbol]
   # @scope class
-  enum :fluid_midi_channel_type, [
+  enum :midi_channel_type, [
     :melodic, 0,
     :drum, 1
   ]
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_channel_type(synth, chan, type)
+  # @method synth_set_channel_type(synth, chan, type)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] type 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_set_channel_type, :fluid_synth_set_channel_type, [FluidSynthT, :int, :int], :int
+  attach_function :synth_set_channel_type, :fluid_synth_set_channel_type, [FluidSynthT, :int, :int], :int
   
   # Low level access
   # 
-  # @method fluid_synth_get_channel_preset(synth, chan)
+  # @method synth_get_channel_preset(synth, chan)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
-  # @return [FFI::Pointer(*FluidPresetT)] 
+  # @return [FFI::Pointer(*PresetT)] 
   # @scope class
-  attach_function :fluid_synth_get_channel_preset, :fluid_synth_get_channel_preset, [FluidSynthT, :int], :pointer
+  attach_function :synth_get_channel_preset, :fluid_synth_get_channel_preset, [FluidSynthT, :int], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_synth_start(synth, id, preset, audio_chan, midi_chan, key, vel)
+  # @method synth_start(synth, id, preset, audio_chan, midi_chan, key, vel)
   # @param [FluidSynthT] synth 
   # @param [Integer] id 
-  # @param [FFI::Pointer(*FluidPresetT)] preset 
+  # @param [FFI::Pointer(*PresetT)] preset 
   # @param [Integer] audio_chan 
   # @param [Integer] midi_chan 
   # @param [Integer] key 
   # @param [Integer] vel 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_start, :fluid_synth_start, [FluidSynthT, :uint, :pointer, :int, :int, :int, :int], :int
+  attach_function :synth_start, :fluid_synth_start, [FluidSynthT, :uint, :pointer, :int, :int, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_stop(synth, id)
+  # @method synth_stop(synth, id)
   # @param [FluidSynthT] synth 
   # @param [Integer] id 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_stop, :fluid_synth_stop, [FluidSynthT, :uint], :int
+  attach_function :synth_stop, :fluid_synth_stop, [FluidSynthT, :uint], :int
   
   # SoundFont management
   # 
-  # @method fluid_synth_sfload(synth, filename, reset_presets)
+  # @method synth_sfload(synth, filename, reset_presets)
   # @param [FluidSynthT] synth 
   # @param [String] filename 
   # @param [Integer] reset_presets 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_sfload, :fluid_synth_sfload, [FluidSynthT, :string, :int], :int
+  attach_function :synth_sfload, :fluid_synth_sfload, [FluidSynthT, :string, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_sfreload(synth, id)
+  # @method synth_sfreload(synth, id)
   # @param [FluidSynthT] synth 
   # @param [Integer] id 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_sfreload, :fluid_synth_sfreload, [FluidSynthT, :uint], :int
+  attach_function :synth_sfreload, :fluid_synth_sfreload, [FluidSynthT, :uint], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_sfunload(synth, id, reset_presets)
+  # @method synth_sfunload(synth, id, reset_presets)
   # @param [FluidSynthT] synth 
   # @param [Integer] id 
   # @param [Integer] reset_presets 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_sfunload, :fluid_synth_sfunload, [FluidSynthT, :uint, :int], :int
+  attach_function :synth_sfunload, :fluid_synth_sfunload, [FluidSynthT, :uint, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_add_sfont(synth, sfont)
+  # @method synth_add_sfont(synth, sfont)
   # @param [FluidSynthT] synth 
-  # @param [FFI::Pointer(*FluidSfontT)] sfont 
+  # @param [FFI::Pointer(*SfontT)] sfont 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_add_sfont, :fluid_synth_add_sfont, [FluidSynthT, :pointer], :int
+  attach_function :synth_add_sfont, :fluid_synth_add_sfont, [FluidSynthT, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_remove_sfont(synth, sfont)
+  # @method synth_remove_sfont(synth, sfont)
   # @param [FluidSynthT] synth 
-  # @param [FFI::Pointer(*FluidSfontT)] sfont 
+  # @param [FFI::Pointer(*SfontT)] sfont 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_remove_sfont, :fluid_synth_remove_sfont, [FluidSynthT, :pointer], :void
+  attach_function :synth_remove_sfont, :fluid_synth_remove_sfont, [FluidSynthT, :pointer], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_sfcount(synth)
+  # @method synth_sfcount(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_sfcount, :fluid_synth_sfcount, [FluidSynthT], :int
+  attach_function :synth_sfcount, :fluid_synth_sfcount, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_sfont(synth, num)
+  # @method synth_get_sfont(synth, num)
   # @param [FluidSynthT] synth 
   # @param [Integer] num 
-  # @return [FFI::Pointer(*FluidSfontT)] 
+  # @return [FFI::Pointer(*SfontT)] 
   # @scope class
-  attach_function :fluid_synth_get_sfont, :fluid_synth_get_sfont, [FluidSynthT, :uint], :pointer
+  attach_function :synth_get_sfont, :fluid_synth_get_sfont, [FluidSynthT, :uint], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_sfont_by_id(synth, id)
+  # @method synth_get_sfont_by_id(synth, id)
   # @param [FluidSynthT] synth 
   # @param [Integer] id 
-  # @return [FFI::Pointer(*FluidSfontT)] 
+  # @return [FFI::Pointer(*SfontT)] 
   # @scope class
-  attach_function :fluid_synth_get_sfont_by_id, :fluid_synth_get_sfont_by_id, [FluidSynthT, :uint], :pointer
+  attach_function :synth_get_sfont_by_id, :fluid_synth_get_sfont_by_id, [FluidSynthT, :uint], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_sfont_by_name(synth, name)
+  # @method synth_get_sfont_by_name(synth, name)
   # @param [FluidSynthT] synth 
   # @param [String] name 
-  # @return [FFI::Pointer(*FluidSfontT)] 
+  # @return [FFI::Pointer(*SfontT)] 
   # @scope class
-  attach_function :fluid_synth_get_sfont_by_name, :fluid_synth_get_sfont_by_name, [FluidSynthT, :string], :pointer
+  attach_function :synth_get_sfont_by_name, :fluid_synth_get_sfont_by_name, [FluidSynthT, :string], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_bank_offset(synth, sfont_id, offset)
+  # @method synth_set_bank_offset(synth, sfont_id, offset)
   # @param [FluidSynthT] synth 
   # @param [Integer] sfont_id 
   # @param [Integer] offset 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_set_bank_offset, :fluid_synth_set_bank_offset, [FluidSynthT, :int, :int], :int
+  attach_function :synth_set_bank_offset, :fluid_synth_set_bank_offset, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_bank_offset(synth, sfont_id)
+  # @method synth_get_bank_offset(synth, sfont_id)
   # @param [FluidSynthT] synth 
   # @param [Integer] sfont_id 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_bank_offset, :fluid_synth_get_bank_offset, [FluidSynthT, :int], :int
+  attach_function :synth_get_bank_offset, :fluid_synth_get_bank_offset, [FluidSynthT, :int], :int
   
   # Reverb 
   # 
-  # @method fluid_synth_set_reverb(synth, roomsize, damping, width, level)
+  # @method synth_set_reverb(synth, roomsize, damping, width, level)
   # @param [FluidSynthT] synth 
   # @param [Float] roomsize 
   # @param [Float] damping 
@@ -845,52 +845,52 @@ module FluidSynth
   # @param [Float] level 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_reverb, :fluid_synth_set_reverb, [FluidSynthT, :double, :double, :double, :double], :void
+  attach_function :synth_set_reverb, :fluid_synth_set_reverb, [FluidSynthT, :double, :double, :double, :double], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_reverb_on(synth, on)
+  # @method synth_set_reverb_on(synth, on)
   # @param [FluidSynthT] synth 
   # @param [Integer] on 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_reverb_on, :fluid_synth_set_reverb_on, [FluidSynthT, :int], :void
+  attach_function :synth_set_reverb_on, :fluid_synth_set_reverb_on, [FluidSynthT, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_reverb_roomsize(synth)
+  # @method synth_get_reverb_roomsize(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_reverb_roomsize, :fluid_synth_get_reverb_roomsize, [FluidSynthT], :double
+  attach_function :synth_get_reverb_roomsize, :fluid_synth_get_reverb_roomsize, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_reverb_damp(synth)
+  # @method synth_get_reverb_damp(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_reverb_damp, :fluid_synth_get_reverb_damp, [FluidSynthT], :double
+  attach_function :synth_get_reverb_damp, :fluid_synth_get_reverb_damp, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_reverb_level(synth)
+  # @method synth_get_reverb_level(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_reverb_level, :fluid_synth_get_reverb_level, [FluidSynthT], :double
+  attach_function :synth_get_reverb_level, :fluid_synth_get_reverb_level, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_reverb_width(synth)
+  # @method synth_get_reverb_width(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_reverb_width, :fluid_synth_get_reverb_width, [FluidSynthT], :double
+  attach_function :synth_get_reverb_width, :fluid_synth_get_reverb_width, [FluidSynthT], :double
   
   # Chorus modulation waveform type.
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_chorus_mod).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:chorus_mod).</em>
   # 
   # === Options:
   # :sine ::
@@ -898,17 +898,17 @@ module FluidSynth
   # :triangle ::
   #   < Sine wave chorus modulation
   # 
-  # @method _enum_fluid_chorus_mod_
+  # @method _enum_chorus_mod_
   # @return [Symbol]
   # @scope class
-  enum :fluid_chorus_mod, [
+  enum :chorus_mod, [
     :sine, 0,
     :triangle, 1
   ]
   
   # < Triangle wave chorus modulation
   # 
-  # @method fluid_synth_set_chorus(synth, nr, level, speed, depth_ms, type)
+  # @method synth_set_chorus(synth, nr, level, speed, depth_ms, type)
   # @param [FluidSynthT] synth 
   # @param [Integer] nr 
   # @param [Float] level 
@@ -917,161 +917,161 @@ module FluidSynth
   # @param [Integer] type 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_chorus, :fluid_synth_set_chorus, [FluidSynthT, :int, :double, :double, :double, :int], :void
+  attach_function :synth_set_chorus, :fluid_synth_set_chorus, [FluidSynthT, :int, :double, :double, :double, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_chorus_on(synth, on)
+  # @method synth_set_chorus_on(synth, on)
   # @param [FluidSynthT] synth 
   # @param [Integer] on 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_chorus_on, :fluid_synth_set_chorus_on, [FluidSynthT, :int], :void
+  attach_function :synth_set_chorus_on, :fluid_synth_set_chorus_on, [FluidSynthT, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_chorus_nr(synth)
+  # @method synth_get_chorus_nr(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_chorus_nr, :fluid_synth_get_chorus_nr, [FluidSynthT], :int
+  attach_function :synth_get_chorus_nr, :fluid_synth_get_chorus_nr, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_chorus_level(synth)
+  # @method synth_get_chorus_level(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_chorus_level, :fluid_synth_get_chorus_level, [FluidSynthT], :double
+  attach_function :synth_get_chorus_level, :fluid_synth_get_chorus_level, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_chorus_speed_hz(synth)
+  # @method synth_get_chorus_speed_hz(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_chorus_speed_hz, :fluid_synth_get_chorus_speed_Hz, [FluidSynthT], :double
+  attach_function :synth_get_chorus_speed_hz, :fluid_synth_get_chorus_speed_Hz, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_chorus_depth_ms(synth)
+  # @method synth_get_chorus_depth_ms(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_chorus_depth_ms, :fluid_synth_get_chorus_depth_ms, [FluidSynthT], :double
+  attach_function :synth_get_chorus_depth_ms, :fluid_synth_get_chorus_depth_ms, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_chorus_type(synth)
+  # @method synth_get_chorus_type(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_chorus_type, :fluid_synth_get_chorus_type, [FluidSynthT], :int
+  attach_function :synth_get_chorus_type, :fluid_synth_get_chorus_type, [FluidSynthT], :int
   
   # Audio and MIDI channels
   # 
-  # @method fluid_synth_count_midi_channels(synth)
+  # @method synth_count_midi_channels(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_count_midi_channels, :fluid_synth_count_midi_channels, [FluidSynthT], :int
+  attach_function :synth_count_midi_channels, :fluid_synth_count_midi_channels, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_count_audio_channels(synth)
+  # @method synth_count_audio_channels(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_count_audio_channels, :fluid_synth_count_audio_channels, [FluidSynthT], :int
+  attach_function :synth_count_audio_channels, :fluid_synth_count_audio_channels, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_count_audio_groups(synth)
+  # @method synth_count_audio_groups(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_count_audio_groups, :fluid_synth_count_audio_groups, [FluidSynthT], :int
+  attach_function :synth_count_audio_groups, :fluid_synth_count_audio_groups, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_count_effects_channels(synth)
+  # @method synth_count_effects_channels(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_count_effects_channels, :fluid_synth_count_effects_channels, [FluidSynthT], :int
+  attach_function :synth_count_effects_channels, :fluid_synth_count_effects_channels, [FluidSynthT], :int
   
   # Synthesis parameters
   # 
-  # @method fluid_synth_set_sample_rate(synth, sample_rate)
+  # @method synth_set_sample_rate(synth, sample_rate)
   # @param [FluidSynthT] synth 
   # @param [Float] sample_rate 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_sample_rate, :fluid_synth_set_sample_rate, [FluidSynthT, :float], :void
+  attach_function :synth_set_sample_rate, :fluid_synth_set_sample_rate, [FluidSynthT, :float], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_gain(synth, gain)
+  # @method synth_set_gain(synth, gain)
   # @param [FluidSynthT] synth 
   # @param [Float] gain 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_gain, :fluid_synth_set_gain, [FluidSynthT, :float], :void
+  attach_function :synth_set_gain, :fluid_synth_set_gain, [FluidSynthT, :float], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_gain(synth)
+  # @method synth_get_gain(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_gain, :fluid_synth_get_gain, [FluidSynthT], :float
+  attach_function :synth_get_gain, :fluid_synth_get_gain, [FluidSynthT], :float
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_polyphony(synth, polyphony)
+  # @method synth_set_polyphony(synth, polyphony)
   # @param [FluidSynthT] synth 
   # @param [Integer] polyphony 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_set_polyphony, :fluid_synth_set_polyphony, [FluidSynthT, :int], :int
+  attach_function :synth_set_polyphony, :fluid_synth_set_polyphony, [FluidSynthT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_polyphony(synth)
+  # @method synth_get_polyphony(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_polyphony, :fluid_synth_get_polyphony, [FluidSynthT], :int
+  attach_function :synth_get_polyphony, :fluid_synth_get_polyphony, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_active_voice_count(synth)
+  # @method synth_get_active_voice_count(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_active_voice_count, :fluid_synth_get_active_voice_count, [FluidSynthT], :int
+  attach_function :synth_get_active_voice_count, :fluid_synth_get_active_voice_count, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_internal_bufsize(synth)
+  # @method synth_get_internal_bufsize(synth)
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_get_internal_bufsize, :fluid_synth_get_internal_bufsize, [FluidSynthT], :int
+  attach_function :synth_get_internal_bufsize, :fluid_synth_get_internal_bufsize, [FluidSynthT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_interp_method(synth, chan, interp_method)
+  # @method synth_set_interp_method(synth, chan, interp_method)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] interp_method 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_set_interp_method, :fluid_synth_set_interp_method, [FluidSynthT, :int, :int], :int
+  attach_function :synth_set_interp_method, :fluid_synth_set_interp_method, [FluidSynthT, :int, :int], :int
   
   # Synthesis interpolation method.
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_interp).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:interp).</em>
   # 
   # === Options:
   # :none ::
@@ -1083,10 +1083,10 @@ module FluidSynth
   # :_7thorder ::
   #   < Fourth-order interpolation, good quality, the default
   # 
-  # @method _enum_fluid_interp_
+  # @method _enum_interp_
   # @return [Symbol]
   # @scope class
-  enum :fluid_interp, [
+  enum :interp, [
     :none, 0,
     :linear, 1,
     :_4thorder, 4,
@@ -1095,18 +1095,18 @@ module FluidSynth
   
   # Generator interface
   # 
-  # @method fluid_synth_set_gen(synth, chan, param, value)
+  # @method synth_set_gen(synth, chan, param, value)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] param 
   # @param [Float] value 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_set_gen, :fluid_synth_set_gen, [FluidSynthT, :int, :int, :float], :int
+  attach_function :synth_set_gen, :fluid_synth_set_gen, [FluidSynthT, :int, :int, :float], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_gen2(synth, chan, param, value, absolute, normalized)
+  # @method synth_set_gen2(synth, chan, param, value, absolute, normalized)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] param 
@@ -1115,21 +1115,21 @@ module FluidSynth
   # @param [Integer] normalized 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_set_gen2, :fluid_synth_set_gen2, [FluidSynthT, :int, :int, :float, :int, :int], :int
+  attach_function :synth_set_gen2, :fluid_synth_set_gen2, [FluidSynthT, :int, :int, :float, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_gen(synth, chan, param)
+  # @method synth_get_gen(synth, chan, param)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] param 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_gen, :fluid_synth_get_gen, [FluidSynthT, :int, :int], :float
+  attach_function :synth_get_gen, :fluid_synth_get_gen, [FluidSynthT, :int, :int], :float
   
   # Tuning
   # 
-  # @method fluid_synth_create_key_tuning(synth, bank, prog, name, pitch)
+  # @method synth_create_key_tuning(synth, bank, prog, name, pitch)
   # @param [FluidSynthT] synth 
   # @param [Integer] bank 
   # @param [Integer] prog 
@@ -1137,36 +1137,11 @@ module FluidSynth
   # @param [FFI::Pointer(*Double)] pitch 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_create_key_tuning, :fluid_synth_create_key_tuning, [FluidSynthT, :int, :int, :string, :pointer], :int
+  attach_function :synth_create_key_tuning, :fluid_synth_create_key_tuning, [FluidSynthT, :int, :int, :string, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_activate_key_tuning(synth, bank, prog, name, pitch, apply)
-  # @param [FluidSynthT] synth 
-  # @param [Integer] bank 
-  # @param [Integer] prog 
-  # @param [String] name 
-  # @param [FFI::Pointer(*Double)] pitch 
-  # @param [Integer] apply 
-  # @return [Integer] 
-  # @scope class
-  attach_function :fluid_synth_activate_key_tuning, :fluid_synth_activate_key_tuning, [FluidSynthT, :int, :int, :string, :pointer, :int], :int
-  
-  # (Not documented)
-  # 
-  # @method fluid_synth_create_octave_tuning(synth, bank, prog, name, pitch)
-  # @param [FluidSynthT] synth 
-  # @param [Integer] bank 
-  # @param [Integer] prog 
-  # @param [String] name 
-  # @param [FFI::Pointer(*Double)] pitch 
-  # @return [Integer] 
-  # @scope class
-  attach_function :fluid_synth_create_octave_tuning, :fluid_synth_create_octave_tuning, [FluidSynthT, :int, :int, :string, :pointer], :int
-  
-  # (Not documented)
-  # 
-  # @method fluid_synth_activate_octave_tuning(synth, bank, prog, name, pitch, apply)
+  # @method synth_activate_key_tuning(synth, bank, prog, name, pitch, apply)
   # @param [FluidSynthT] synth 
   # @param [Integer] bank 
   # @param [Integer] prog 
@@ -1175,11 +1150,36 @@ module FluidSynth
   # @param [Integer] apply 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_activate_octave_tuning, :fluid_synth_activate_octave_tuning, [FluidSynthT, :int, :int, :string, :pointer, :int], :int
+  attach_function :synth_activate_key_tuning, :fluid_synth_activate_key_tuning, [FluidSynthT, :int, :int, :string, :pointer, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_tune_notes(synth, bank, prog, len, keys, pitch, apply)
+  # @method synth_create_octave_tuning(synth, bank, prog, name, pitch)
+  # @param [FluidSynthT] synth 
+  # @param [Integer] bank 
+  # @param [Integer] prog 
+  # @param [String] name 
+  # @param [FFI::Pointer(*Double)] pitch 
+  # @return [Integer] 
+  # @scope class
+  attach_function :synth_create_octave_tuning, :fluid_synth_create_octave_tuning, [FluidSynthT, :int, :int, :string, :pointer], :int
+  
+  # (Not documented)
+  # 
+  # @method synth_activate_octave_tuning(synth, bank, prog, name, pitch, apply)
+  # @param [FluidSynthT] synth 
+  # @param [Integer] bank 
+  # @param [Integer] prog 
+  # @param [String] name 
+  # @param [FFI::Pointer(*Double)] pitch 
+  # @param [Integer] apply 
+  # @return [Integer] 
+  # @scope class
+  attach_function :synth_activate_octave_tuning, :fluid_synth_activate_octave_tuning, [FluidSynthT, :int, :int, :string, :pointer, :int], :int
+  
+  # (Not documented)
+  # 
+  # @method synth_tune_notes(synth, bank, prog, len, keys, pitch, apply)
   # @param [FluidSynthT] synth 
   # @param [Integer] bank 
   # @param [Integer] prog 
@@ -1189,22 +1189,22 @@ module FluidSynth
   # @param [Integer] apply 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_tune_notes, :fluid_synth_tune_notes, [FluidSynthT, :int, :int, :int, :pointer, :pointer, :int], :int
+  attach_function :synth_tune_notes, :fluid_synth_tune_notes, [FluidSynthT, :int, :int, :int, :pointer, :pointer, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_select_tuning(synth, chan, bank, prog)
+  # @method synth_select_tuning(synth, chan, bank, prog)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] bank 
   # @param [Integer] prog 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_select_tuning, :fluid_synth_select_tuning, [FluidSynthT, :int, :int, :int], :int
+  attach_function :synth_select_tuning, :fluid_synth_select_tuning, [FluidSynthT, :int, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_activate_tuning(synth, chan, bank, prog, apply)
+  # @method synth_activate_tuning(synth, chan, bank, prog, apply)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] bank 
@@ -1212,48 +1212,48 @@ module FluidSynth
   # @param [Integer] apply 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_activate_tuning, :fluid_synth_activate_tuning, [FluidSynthT, :int, :int, :int, :int], :int
+  attach_function :synth_activate_tuning, :fluid_synth_activate_tuning, [FluidSynthT, :int, :int, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_reset_tuning(synth, chan)
+  # @method synth_reset_tuning(synth, chan)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_reset_tuning, :fluid_synth_reset_tuning, [FluidSynthT, :int], :int
+  attach_function :synth_reset_tuning, :fluid_synth_reset_tuning, [FluidSynthT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_deactivate_tuning(synth, chan, apply)
+  # @method synth_deactivate_tuning(synth, chan, apply)
   # @param [FluidSynthT] synth 
   # @param [Integer] chan 
   # @param [Integer] apply 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_deactivate_tuning, :fluid_synth_deactivate_tuning, [FluidSynthT, :int, :int], :int
+  attach_function :synth_deactivate_tuning, :fluid_synth_deactivate_tuning, [FluidSynthT, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_tuning_iteration_start(synth)
+  # @method synth_tuning_iteration_start(synth)
   # @param [FluidSynthT] synth 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_tuning_iteration_start, :fluid_synth_tuning_iteration_start, [FluidSynthT], :void
+  attach_function :synth_tuning_iteration_start, :fluid_synth_tuning_iteration_start, [FluidSynthT], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_tuning_iteration_next(synth, bank, prog)
+  # @method synth_tuning_iteration_next(synth, bank, prog)
   # @param [FluidSynthT] synth 
   # @param [FFI::Pointer(*Int)] bank 
   # @param [FFI::Pointer(*Int)] prog 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_tuning_iteration_next, :fluid_synth_tuning_iteration_next, [FluidSynthT, :pointer, :pointer], :int
+  attach_function :synth_tuning_iteration_next, :fluid_synth_tuning_iteration_next, [FluidSynthT, :pointer, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_tuning_dump(synth, bank, prog, name, len, pitch)
+  # @method synth_tuning_dump(synth, bank, prog, name, len, pitch)
   # @param [FluidSynthT] synth 
   # @param [Integer] bank 
   # @param [Integer] prog 
@@ -1262,23 +1262,23 @@ module FluidSynth
   # @param [FFI::Pointer(*Double)] pitch 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_tuning_dump, :fluid_synth_tuning_dump, [FluidSynthT, :int, :int, :string, :int, :pointer], :int
+  attach_function :synth_tuning_dump, :fluid_synth_tuning_dump, [FluidSynthT, :int, :int, :string, :int, :pointer], :int
   
   # Misc
   # 
-  # @method fluid_synth_get_cpu_load(synth)
+  # @method synth_get_cpu_load(synth)
   # @param [FluidSynthT] synth 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_synth_get_cpu_load, :fluid_synth_get_cpu_load, [FluidSynthT], :double
+  attach_function :synth_get_cpu_load, :fluid_synth_get_cpu_load, [FluidSynthT], :double
   
   # (Not documented)
   # 
-  # @method fluid_synth_error(synth)
+  # @method synth_error(synth)
   # @param [FluidSynthT] synth 
   # @return [String] 
   # @scope class
-  attach_function :fluid_synth_error, :fluid_synth_error, [FluidSynthT], :string
+  attach_function :synth_error, :fluid_synth_error, [FluidSynthT], :string
   
   # Synthesizer plugin
   # 
@@ -1286,7 +1286,7 @@ module FluidSynth
   # explained above. Once the synthesizer is created you can call
   # any of the functions below to get the audio. 
   # 
-  # @method fluid_synth_write_s16(synth, len, lout, loff, lincr, rout, roff, rincr)
+  # @method synth_write_s16(synth, len, lout, loff, lincr, rout, roff, rincr)
   # @param [FluidSynthT] synth 
   # @param [Integer] len 
   # @param [FFI::Pointer(*Void)] lout 
@@ -1297,11 +1297,11 @@ module FluidSynth
   # @param [Integer] rincr 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_write_s16, :fluid_synth_write_s16, [FluidSynthT, :int, :pointer, :int, :int, :pointer, :int, :int], :int
+  attach_function :synth_write_s16, :fluid_synth_write_s16, [FluidSynthT, :int, :pointer, :int, :int, :pointer, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_write_float(synth, len, lout, loff, lincr, rout, roff, rincr)
+  # @method synth_write_float(synth, len, lout, loff, lincr, rout, roff, rincr)
   # @param [FluidSynthT] synth 
   # @param [Integer] len 
   # @param [FFI::Pointer(*Void)] lout 
@@ -1312,11 +1312,11 @@ module FluidSynth
   # @param [Integer] rincr 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_write_float, :fluid_synth_write_float, [FluidSynthT, :int, :pointer, :int, :int, :pointer, :int, :int], :int
+  attach_function :synth_write_float, :fluid_synth_write_float, [FluidSynthT, :int, :pointer, :int, :int, :pointer, :int, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_nwrite_float(synth, len, left, right, fx_left, fx_right)
+  # @method synth_nwrite_float(synth, len, left, right, fx_left, fx_right)
   # @param [FluidSynthT] synth 
   # @param [Integer] len 
   # @param [FFI::Pointer(**Float)] left 
@@ -1325,11 +1325,11 @@ module FluidSynth
   # @param [FFI::Pointer(**Float)] fx_right 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_nwrite_float, :fluid_synth_nwrite_float, [FluidSynthT, :int, :pointer, :pointer, :pointer, :pointer], :int
+  attach_function :synth_nwrite_float, :fluid_synth_nwrite_float, [FluidSynthT, :int, :pointer, :pointer, :pointer, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_process(synth, len, nin, in, nout, out)
+  # @method synth_process(synth, len, nin, in, nout, out)
   # @param [FluidSynthT] synth 
   # @param [Integer] len 
   # @param [Integer] nin 
@@ -1338,7 +1338,7 @@ module FluidSynth
   # @param [FFI::Pointer(**Float)] out 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_process, :fluid_synth_process, [FluidSynthT, :int, :int, :pointer, :int, :pointer], :int
+  attach_function :synth_process, :fluid_synth_process, [FluidSynthT, :int, :int, :pointer, :int, :pointer], :int
   
   # Type definition of the synthesizer's audio callback function.
   # @param synth FluidSynth instance
@@ -1352,7 +1352,7 @@ module FluidSynth
   # 
   # <em>This entry is only for documentation and no real method.</em>
   # 
-  # @method _callback_fluid_audio_callback_t_(len, out1, loff, lincr, out2, roff, rincr)
+  # @method _callback_audio_callback_t_(len, out1, loff, lincr, out2, roff, rincr)
   # @param [Integer] len 
   # @param [FFI::Pointer(*Void)] out1 
   # @param [Integer] loff 
@@ -1362,66 +1362,66 @@ module FluidSynth
   # @param [Integer] rincr 
   # @return [FluidSynthT] 
   # @scope class
-  callback :fluid_audio_callback_t, [:int, :pointer, :int, :int, :pointer, :int, :int], FluidSynthT
+  callback :audio_callback_t, [:int, :pointer, :int, :int, :pointer, :int, :int], FluidSynthT
   
   # Synthesizer's interface to handle SoundFont loaders
   # 
-  # @method fluid_synth_add_sfloader(synth, loader)
+  # @method synth_add_sfloader(synth, loader)
   # @param [FluidSynthT] synth 
-  # @param [FFI::Pointer(*FluidSfloaderT)] loader 
+  # @param [FFI::Pointer(*SfloaderT)] loader 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_add_sfloader, :fluid_synth_add_sfloader, [FluidSynthT, :pointer], :void
+  attach_function :synth_add_sfloader, :fluid_synth_add_sfloader, [FluidSynthT, :pointer], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_alloc_voice(synth, sample, channum, key, vel)
+  # @method synth_alloc_voice(synth, sample, channum, key, vel)
   # @param [FluidSynthT] synth 
-  # @param [FFI::Pointer(*FluidSampleT)] sample 
+  # @param [FFI::Pointer(*SampleT)] sample 
   # @param [Integer] channum 
   # @param [Integer] key 
   # @param [Integer] vel 
   # @return [FluidVoiceT] 
   # @scope class
-  attach_function :fluid_synth_alloc_voice, :fluid_synth_alloc_voice, [FluidSynthT, :pointer, :int, :int, :int], FluidVoiceT
+  attach_function :synth_alloc_voice, :fluid_synth_alloc_voice, [FluidSynthT, :pointer, :int, :int, :int], FluidVoiceT
   
   # (Not documented)
   # 
-  # @method fluid_synth_start_voice(synth, voice)
+  # @method synth_start_voice(synth, voice)
   # @param [FluidSynthT] synth 
   # @param [FluidVoiceT] voice 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_start_voice, :fluid_synth_start_voice, [FluidSynthT, FluidVoiceT], :void
+  attach_function :synth_start_voice, :fluid_synth_start_voice, [FluidSynthT, FluidVoiceT], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_get_voicelist(synth, buf, bufsize, id)
+  # @method synth_get_voicelist(synth, buf, bufsize, id)
   # @param [FluidSynthT] synth 
-  # @param [FFI::Pointer(**FluidVoiceT)] buf 
+  # @param [FFI::Pointer(**VoiceT)] buf 
   # @param [Integer] bufsize 
   # @param [Integer] id 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_get_voicelist, :fluid_synth_get_voicelist, [FluidSynthT, :pointer, :int, :int], :void
+  attach_function :synth_get_voicelist, :fluid_synth_get_voicelist, [FluidSynthT, :pointer, :int, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_synth_handle_midi_event(data, event)
+  # @method synth_handle_midi_event(data, event)
   # @param [FFI::Pointer(*Void)] data 
   # @param [FluidMidiEventT] event 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_synth_handle_midi_event, :fluid_synth_handle_midi_event, [:pointer, FluidMidiEventT], :int
+  attach_function :synth_handle_midi_event, :fluid_synth_handle_midi_event, [:pointer, FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_synth_set_midi_router(synth, router)
+  # @method synth_set_midi_router(synth, router)
   # @param [FluidSynthT] synth 
   # @param [FluidMidiRouterT] router 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_synth_set_midi_router, :fluid_synth_set_midi_router, [FluidSynthT, FluidMidiRouterT], :void
+  attach_function :synth_set_midi_router, :fluid_synth_set_midi_router, [FluidSynthT, FluidMidiRouterT], :void
   
   # < Synthesis voice instance
   # 
@@ -1624,7 +1624,7 @@ module FluidSynth
   # 
   # <em>This entry is only for documentation and no real method.</em>
   # 
-  # @method _callback_fluid_audio_func_t_(len, nin, in, nout, out)
+  # @method _callback_audio_func_t_(len, nin, in, nout, out)
   # @param [Integer] len 
   # @param [Integer] nin 
   # @param [FFI::Pointer(**Float)] in 
@@ -1632,7 +1632,7 @@ module FluidSynth
   # @param [FFI::Pointer(**Float)] out 
   # @return [FFI::Pointer(*Void)] 
   # @scope class
-  callback :fluid_audio_func_t, [:int, :int, :pointer, :int, :pointer], :pointer
+  callback :audio_func_t, [:int, :int, :pointer, :int, :pointer], :pointer
   
   # (Not documented)
   # 
@@ -1647,11 +1647,11 @@ module FluidSynth
   # 
   # @method new_fluid_audio_driver2(settings, func, data)
   # @param [FluidHashtableT] settings 
-  # @param [Proc(_callback_fluid_audio_func_t_)] func 
+  # @param [Proc(_callback_audio_func_t_)] func 
   # @param [FFI::Pointer(*Void)] data 
   # @return [FluidAudioDriverT] 
   # @scope class
-  attach_function :new_fluid_audio_driver2, :new_fluid_audio_driver2, [FluidHashtableT, :fluid_audio_func_t, :pointer], FluidAudioDriverT
+  attach_function :new_fluid_audio_driver2, :new_fluid_audio_driver2, [FluidHashtableT, :audio_func_t, :pointer], FluidAudioDriverT
   
   # (Not documented)
   # 
@@ -1671,11 +1671,11 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_file_renderer_process_block(dev)
+  # @method file_renderer_process_block(dev)
   # @param [FluidFileRendererT] dev 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_file_renderer_process_block, :fluid_file_renderer_process_block, [FluidFileRendererT], :int
+  attach_function :file_renderer_process_block, :fluid_file_renderer_process_block, [FluidFileRendererT], :int
   
   # (Not documented)
   # 
@@ -1687,7 +1687,7 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_seq_event_type).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:seq_event_type).</em>
   # 
   # === Options:
   # :note ::
@@ -1737,10 +1737,10 @@ module FluidSynth
   # :lastevent ::
   #   < Called when a sequencer client is being unregistered. @since 1.1.0
   # 
-  # @method _enum_fluid_seq_event_type_
+  # @method _enum_seq_event_type_
   # @return [Symbol]
   # @scope class
-  enum :fluid_seq_event_type, [
+  enum :seq_event_type, [
     :note, 0,
     :noteon,
     :noteoff,
@@ -1783,34 +1783,34 @@ module FluidSynth
   
   # Initializing events
   # 
-  # @method fluid_event_set_source(evt, src)
+  # @method event_set_source(evt, src)
   # @param [FluidEventT] evt 
   # @param [Integer] src 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_set_source, :fluid_event_set_source, [FluidEventT, :short], :void
+  attach_function :event_set_source, :fluid_event_set_source, [FluidEventT, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_set_dest(evt, dest)
+  # @method event_set_dest(evt, dest)
   # @param [FluidEventT] evt 
   # @param [Integer] dest 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_set_dest, :fluid_event_set_dest, [FluidEventT, :short], :void
+  attach_function :event_set_dest, :fluid_event_set_dest, [FluidEventT, :short], :void
   
   # Timer events
   # 
-  # @method fluid_event_timer(evt, data)
+  # @method event_timer(evt, data)
   # @param [FluidEventT] evt 
   # @param [FFI::Pointer(*Void)] data 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_timer, :fluid_event_timer, [FluidEventT, :pointer], :void
+  attach_function :event_timer, :fluid_event_timer, [FluidEventT, :pointer], :void
   
   # Note events
   # 
-  # @method fluid_event_note(evt, channel, key, vel, duration)
+  # @method event_note(evt, channel, key, vel, duration)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] key 
@@ -1818,70 +1818,70 @@ module FluidSynth
   # @param [Integer] duration 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_note, :fluid_event_note, [FluidEventT, :int, :short, :short, :uint], :void
+  attach_function :event_note, :fluid_event_note, [FluidEventT, :int, :short, :short, :uint], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_noteon(evt, channel, key, vel)
+  # @method event_noteon(evt, channel, key, vel)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] key 
   # @param [Integer] vel 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_noteon, :fluid_event_noteon, [FluidEventT, :int, :short, :short], :void
+  attach_function :event_noteon, :fluid_event_noteon, [FluidEventT, :int, :short, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_noteoff(evt, channel, key)
+  # @method event_noteoff(evt, channel, key)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] key 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_noteoff, :fluid_event_noteoff, [FluidEventT, :int, :short], :void
+  attach_function :event_noteoff, :fluid_event_noteoff, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_all_sounds_off(evt, channel)
+  # @method event_all_sounds_off(evt, channel)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_all_sounds_off, :fluid_event_all_sounds_off, [FluidEventT, :int], :void
+  attach_function :event_all_sounds_off, :fluid_event_all_sounds_off, [FluidEventT, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_all_notes_off(evt, channel)
+  # @method event_all_notes_off(evt, channel)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_all_notes_off, :fluid_event_all_notes_off, [FluidEventT, :int], :void
+  attach_function :event_all_notes_off, :fluid_event_all_notes_off, [FluidEventT, :int], :void
   
   # Instrument selection
   # 
-  # @method fluid_event_bank_select(evt, channel, bank_num)
+  # @method event_bank_select(evt, channel, bank_num)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] bank_num 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_bank_select, :fluid_event_bank_select, [FluidEventT, :int, :short], :void
+  attach_function :event_bank_select, :fluid_event_bank_select, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_program_change(evt, channel, preset_num)
+  # @method event_program_change(evt, channel, preset_num)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] preset_num 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_program_change, :fluid_event_program_change, [FluidEventT, :int, :short], :void
+  attach_function :event_program_change, :fluid_event_program_change, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_program_select(evt, channel, sfont_id, bank_num, preset_num)
+  # @method event_program_select(evt, channel, sfont_id, bank_num, preset_num)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] sfont_id 
@@ -1889,245 +1889,245 @@ module FluidSynth
   # @param [Integer] preset_num 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_program_select, :fluid_event_program_select, [FluidEventT, :int, :uint, :short, :short], :void
+  attach_function :event_program_select, :fluid_event_program_select, [FluidEventT, :int, :uint, :short, :short], :void
   
   # Real-time generic instrument controllers
   # 
-  # @method fluid_event_control_change(evt, channel, control, val)
+  # @method event_control_change(evt, channel, control, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] control 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_control_change, :fluid_event_control_change, [FluidEventT, :int, :short, :short], :void
+  attach_function :event_control_change, :fluid_event_control_change, [FluidEventT, :int, :short, :short], :void
   
   # Real-time instrument controllers shortcuts
   # 
-  # @method fluid_event_pitch_bend(evt, channel, val)
+  # @method event_pitch_bend(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_pitch_bend, :fluid_event_pitch_bend, [FluidEventT, :int, :int], :void
+  attach_function :event_pitch_bend, :fluid_event_pitch_bend, [FluidEventT, :int, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_pitch_wheelsens(evt, channel, val)
+  # @method event_pitch_wheelsens(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_pitch_wheelsens, :fluid_event_pitch_wheelsens, [FluidEventT, :int, :short], :void
+  attach_function :event_pitch_wheelsens, :fluid_event_pitch_wheelsens, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_modulation(evt, channel, val)
+  # @method event_modulation(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_modulation, :fluid_event_modulation, [FluidEventT, :int, :short], :void
+  attach_function :event_modulation, :fluid_event_modulation, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_sustain(evt, channel, val)
+  # @method event_sustain(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_sustain, :fluid_event_sustain, [FluidEventT, :int, :short], :void
+  attach_function :event_sustain, :fluid_event_sustain, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_pan(evt, channel, val)
+  # @method event_pan(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_pan, :fluid_event_pan, [FluidEventT, :int, :short], :void
+  attach_function :event_pan, :fluid_event_pan, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_volume(evt, channel, val)
+  # @method event_volume(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_volume, :fluid_event_volume, [FluidEventT, :int, :short], :void
+  attach_function :event_volume, :fluid_event_volume, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_reverb_send(evt, channel, val)
+  # @method event_reverb_send(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_reverb_send, :fluid_event_reverb_send, [FluidEventT, :int, :short], :void
+  attach_function :event_reverb_send, :fluid_event_reverb_send, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_chorus_send(evt, channel, val)
+  # @method event_chorus_send(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_chorus_send, :fluid_event_chorus_send, [FluidEventT, :int, :short], :void
+  attach_function :event_chorus_send, :fluid_event_chorus_send, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_channel_pressure(evt, channel, val)
+  # @method event_channel_pressure(evt, channel, val)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @param [Integer] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_channel_pressure, :fluid_event_channel_pressure, [FluidEventT, :int, :short], :void
+  attach_function :event_channel_pressure, :fluid_event_channel_pressure, [FluidEventT, :int, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_event_system_reset(evt)
+  # @method event_system_reset(evt)
   # @param [FluidEventT] evt 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_system_reset, :fluid_event_system_reset, [FluidEventT], :void
+  attach_function :event_system_reset, :fluid_event_system_reset, [FluidEventT], :void
   
   # Only for removing events
   # 
-  # @method fluid_event_any_control_change(evt, channel)
+  # @method event_any_control_change(evt, channel)
   # @param [FluidEventT] evt 
   # @param [Integer] channel 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_any_control_change, :fluid_event_any_control_change, [FluidEventT, :int], :void
+  attach_function :event_any_control_change, :fluid_event_any_control_change, [FluidEventT, :int], :void
   
   # Only when unregistering clients
   # 
-  # @method fluid_event_unregistering(evt)
+  # @method event_unregistering(evt)
   # @param [FluidEventT] evt 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_event_unregistering, :fluid_event_unregistering, [FluidEventT], :void
+  attach_function :event_unregistering, :fluid_event_unregistering, [FluidEventT], :void
   
   # Accessing event data
   # 
-  # @method fluid_event_get_type(evt)
+  # @method event_get_type(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_type, :fluid_event_get_type, [FluidEventT], :int
+  attach_function :event_get_type, :fluid_event_get_type, [FluidEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_event_get_source(evt)
+  # @method event_get_source(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_source, :fluid_event_get_source, [FluidEventT], :short
+  attach_function :event_get_source, :fluid_event_get_source, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_dest(evt)
+  # @method event_get_dest(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_dest, :fluid_event_get_dest, [FluidEventT], :short
+  attach_function :event_get_dest, :fluid_event_get_dest, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_channel(evt)
+  # @method event_get_channel(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_channel, :fluid_event_get_channel, [FluidEventT], :int
+  attach_function :event_get_channel, :fluid_event_get_channel, [FluidEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_event_get_key(evt)
+  # @method event_get_key(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_key, :fluid_event_get_key, [FluidEventT], :short
+  attach_function :event_get_key, :fluid_event_get_key, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_velocity(evt)
+  # @method event_get_velocity(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_velocity, :fluid_event_get_velocity, [FluidEventT], :short
+  attach_function :event_get_velocity, :fluid_event_get_velocity, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_control(evt)
+  # @method event_get_control(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_control, :fluid_event_get_control, [FluidEventT], :short
+  attach_function :event_get_control, :fluid_event_get_control, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_value(evt)
+  # @method event_get_value(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_value, :fluid_event_get_value, [FluidEventT], :short
+  attach_function :event_get_value, :fluid_event_get_value, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_program(evt)
+  # @method event_get_program(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_program, :fluid_event_get_program, [FluidEventT], :short
+  attach_function :event_get_program, :fluid_event_get_program, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_data(evt)
+  # @method event_get_data(evt)
   # @param [FluidEventT] evt 
   # @return [FFI::Pointer(*Void)] 
   # @scope class
-  attach_function :fluid_event_get_data, :fluid_event_get_data, [FluidEventT], :pointer
+  attach_function :event_get_data, :fluid_event_get_data, [FluidEventT], :pointer
   
   # (Not documented)
   # 
-  # @method fluid_event_get_duration(evt)
+  # @method event_get_duration(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_duration, :fluid_event_get_duration, [FluidEventT], :uint
+  attach_function :event_get_duration, :fluid_event_get_duration, [FluidEventT], :uint
   
   # (Not documented)
   # 
-  # @method fluid_event_get_bank(evt)
+  # @method event_get_bank(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_bank, :fluid_event_get_bank, [FluidEventT], :short
+  attach_function :event_get_bank, :fluid_event_get_bank, [FluidEventT], :short
   
   # (Not documented)
   # 
-  # @method fluid_event_get_pitch(evt)
+  # @method event_get_pitch(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_pitch, :fluid_event_get_pitch, [FluidEventT], :int
+  attach_function :event_get_pitch, :fluid_event_get_pitch, [FluidEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_event_get_sfont_id(evt)
+  # @method event_get_sfont_id(evt)
   # @param [FluidEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_event_get_sfont_id, :fluid_event_get_sfont_id, [FluidEventT], :uint
+  attach_function :event_get_sfont_id, :fluid_event_get_sfont_id, [FluidEventT], :uint
   
   # (Not documented)
   # 
@@ -2146,155 +2146,155 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_type(evt, type)
+  # @method midi_event_set_type(evt, type)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] type 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_type, :fluid_midi_event_set_type, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_type, :fluid_midi_event_set_type, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_type(evt)
+  # @method midi_event_get_type(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_type, :fluid_midi_event_get_type, [FluidMidiEventT], :int
+  attach_function :midi_event_get_type, :fluid_midi_event_get_type, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_channel(evt, chan)
+  # @method midi_event_set_channel(evt, chan)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] chan 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_channel, :fluid_midi_event_set_channel, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_channel, :fluid_midi_event_set_channel, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_channel(evt)
+  # @method midi_event_get_channel(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_channel, :fluid_midi_event_get_channel, [FluidMidiEventT], :int
+  attach_function :midi_event_get_channel, :fluid_midi_event_get_channel, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_key(evt)
+  # @method midi_event_get_key(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_key, :fluid_midi_event_get_key, [FluidMidiEventT], :int
+  attach_function :midi_event_get_key, :fluid_midi_event_get_key, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_key(evt, key)
+  # @method midi_event_set_key(evt, key)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] key 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_key, :fluid_midi_event_set_key, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_key, :fluid_midi_event_set_key, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_velocity(evt)
+  # @method midi_event_get_velocity(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_velocity, :fluid_midi_event_get_velocity, [FluidMidiEventT], :int
+  attach_function :midi_event_get_velocity, :fluid_midi_event_get_velocity, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_velocity(evt, vel)
+  # @method midi_event_set_velocity(evt, vel)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] vel 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_velocity, :fluid_midi_event_set_velocity, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_velocity, :fluid_midi_event_set_velocity, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_control(evt)
+  # @method midi_event_get_control(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_control, :fluid_midi_event_get_control, [FluidMidiEventT], :int
+  attach_function :midi_event_get_control, :fluid_midi_event_get_control, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_control(evt, ctrl)
+  # @method midi_event_set_control(evt, ctrl)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] ctrl 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_control, :fluid_midi_event_set_control, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_control, :fluid_midi_event_set_control, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_value(evt)
+  # @method midi_event_get_value(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_value, :fluid_midi_event_get_value, [FluidMidiEventT], :int
+  attach_function :midi_event_get_value, :fluid_midi_event_get_value, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_value(evt, val)
-  # @param [FluidMidiEventT] evt 
-  # @param [Integer] val 
-  # @return [Integer] 
-  # @scope class
-  attach_function :fluid_midi_event_set_value, :fluid_midi_event_set_value, [FluidMidiEventT, :int], :int
-  
-  # (Not documented)
-  # 
-  # @method fluid_midi_event_get_program(evt)
-  # @param [FluidMidiEventT] evt 
-  # @return [Integer] 
-  # @scope class
-  attach_function :fluid_midi_event_get_program, :fluid_midi_event_get_program, [FluidMidiEventT], :int
-  
-  # (Not documented)
-  # 
-  # @method fluid_midi_event_set_program(evt, val)
+  # @method midi_event_set_value(evt, val)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_program, :fluid_midi_event_set_program, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_value, :fluid_midi_event_set_value, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_get_pitch(evt)
+  # @method midi_event_get_program(evt)
   # @param [FluidMidiEventT] evt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_get_pitch, :fluid_midi_event_get_pitch, [FluidMidiEventT], :int
+  attach_function :midi_event_get_program, :fluid_midi_event_get_program, [FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_pitch(evt, val)
+  # @method midi_event_set_program(evt, val)
   # @param [FluidMidiEventT] evt 
   # @param [Integer] val 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_pitch, :fluid_midi_event_set_pitch, [FluidMidiEventT, :int], :int
+  attach_function :midi_event_set_program, :fluid_midi_event_set_program, [FluidMidiEventT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_event_set_sysex(evt, data, size, dynamic)
+  # @method midi_event_get_pitch(evt)
+  # @param [FluidMidiEventT] evt 
+  # @return [Integer] 
+  # @scope class
+  attach_function :midi_event_get_pitch, :fluid_midi_event_get_pitch, [FluidMidiEventT], :int
+  
+  # (Not documented)
+  # 
+  # @method midi_event_set_pitch(evt, val)
+  # @param [FluidMidiEventT] evt 
+  # @param [Integer] val 
+  # @return [Integer] 
+  # @scope class
+  attach_function :midi_event_set_pitch, :fluid_midi_event_set_pitch, [FluidMidiEventT, :int], :int
+  
+  # (Not documented)
+  # 
+  # @method midi_event_set_sysex(evt, data, size, dynamic)
   # @param [FluidMidiEventT] evt 
   # @param [FFI::Pointer(*Void)] data 
   # @param [Integer] size 
   # @param [Integer] dynamic 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_event_set_sysex, :fluid_midi_event_set_sysex, [FluidMidiEventT, :pointer, :int, :int], :int
+  attach_function :midi_event_set_sysex, :fluid_midi_event_set_sysex, [FluidMidiEventT, :pointer, :int, :int], :int
   
   # MIDI router rule type.
   # @since 1.1.0
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_midi_router_rule_type).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:midi_router_rule_type).</em>
   # 
   # === Options:
   # :note ::
@@ -2312,10 +2312,10 @@ module FluidSynth
   # :count ::
   #   < MIDI key pressure rule
   # 
-  # @method _enum_fluid_midi_router_rule_type_
+  # @method _enum_midi_router_rule_type_
   # @return [Symbol]
   # @scope class
-  enum :fluid_midi_router_rule_type, [
+  enum :midi_router_rule_type, [
     :note,
     :cc,
     :prog_change,
@@ -2364,29 +2364,29 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_set_default_rules(router)
+  # @method midi_router_set_default_rules(router)
   # @param [FluidMidiRouterT] router 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_router_set_default_rules, :fluid_midi_router_set_default_rules, [FluidMidiRouterT], :int
+  attach_function :midi_router_set_default_rules, :fluid_midi_router_set_default_rules, [FluidMidiRouterT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_clear_rules(router)
+  # @method midi_router_clear_rules(router)
   # @param [FluidMidiRouterT] router 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_router_clear_rules, :fluid_midi_router_clear_rules, [FluidMidiRouterT], :int
+  attach_function :midi_router_clear_rules, :fluid_midi_router_clear_rules, [FluidMidiRouterT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_add_rule(router, rule, type)
+  # @method midi_router_add_rule(router, rule, type)
   # @param [FluidMidiRouterT] router 
   # @param [FluidMidiRouterRuleT] rule 
   # @param [Integer] type 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_router_add_rule, :fluid_midi_router_add_rule, [FluidMidiRouterT, FluidMidiRouterRuleT, :int], :int
+  attach_function :midi_router_add_rule, :fluid_midi_router_add_rule, [FluidMidiRouterT, FluidMidiRouterRuleT, :int], :int
   
   # (Not documented)
   # 
@@ -2405,7 +2405,7 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_rule_set_chan(rule, min, max, mul, add)
+  # @method midi_router_rule_set_chan(rule, min, max, mul, add)
   # @param [FluidMidiRouterRuleT] rule 
   # @param [Integer] min 
   # @param [Integer] max 
@@ -2413,11 +2413,11 @@ module FluidSynth
   # @param [Integer] add 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_midi_router_rule_set_chan, :fluid_midi_router_rule_set_chan, [FluidMidiRouterRuleT, :int, :int, :float, :int], :void
+  attach_function :midi_router_rule_set_chan, :fluid_midi_router_rule_set_chan, [FluidMidiRouterRuleT, :int, :int, :float, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_rule_set_param1(rule, min, max, mul, add)
+  # @method midi_router_rule_set_param1(rule, min, max, mul, add)
   # @param [FluidMidiRouterRuleT] rule 
   # @param [Integer] min 
   # @param [Integer] max 
@@ -2425,11 +2425,11 @@ module FluidSynth
   # @param [Integer] add 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_midi_router_rule_set_param1, :fluid_midi_router_rule_set_param1, [FluidMidiRouterRuleT, :int, :int, :float, :int], :void
+  attach_function :midi_router_rule_set_param1, :fluid_midi_router_rule_set_param1, [FluidMidiRouterRuleT, :int, :int, :float, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_rule_set_param2(rule, min, max, mul, add)
+  # @method midi_router_rule_set_param2(rule, min, max, mul, add)
   # @param [FluidMidiRouterRuleT] rule 
   # @param [Integer] min 
   # @param [Integer] max 
@@ -2437,34 +2437,34 @@ module FluidSynth
   # @param [Integer] add 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_midi_router_rule_set_param2, :fluid_midi_router_rule_set_param2, [FluidMidiRouterRuleT, :int, :int, :float, :int], :void
+  attach_function :midi_router_rule_set_param2, :fluid_midi_router_rule_set_param2, [FluidMidiRouterRuleT, :int, :int, :float, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_midi_router_handle_midi_event(data, event)
+  # @method midi_router_handle_midi_event(data, event)
   # @param [FFI::Pointer(*Void)] data 
   # @param [FluidMidiEventT] event 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_router_handle_midi_event, :fluid_midi_router_handle_midi_event, [:pointer, FluidMidiEventT], :int
+  attach_function :midi_router_handle_midi_event, :fluid_midi_router_handle_midi_event, [:pointer, FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_dump_prerouter(data, event)
+  # @method midi_dump_prerouter(data, event)
   # @param [FFI::Pointer(*Void)] data 
   # @param [FluidMidiEventT] event 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_dump_prerouter, :fluid_midi_dump_prerouter, [:pointer, FluidMidiEventT], :int
+  attach_function :midi_dump_prerouter, :fluid_midi_dump_prerouter, [:pointer, FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # @method fluid_midi_dump_postrouter(data, event)
+  # @method midi_dump_postrouter(data, event)
   # @param [FFI::Pointer(*Void)] data 
   # @param [FluidMidiEventT] event 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_midi_dump_postrouter, :fluid_midi_dump_postrouter, [:pointer, FluidMidiEventT], :int
+  attach_function :midi_dump_postrouter, :fluid_midi_dump_postrouter, [:pointer, FluidMidiEventT], :int
   
   # (Not documented)
   # 
@@ -2487,7 +2487,7 @@ module FluidSynth
   # MIDI player status enum.
   # @since 1.1.0
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_player_status).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:player_status).</em>
   # 
   # === Options:
   # :ready ::
@@ -2497,10 +2497,10 @@ module FluidSynth
   # :done ::
   #   < Player is currently playing
   # 
-  # @method _enum_fluid_player_status_
+  # @method _enum_player_status_
   # @return [Symbol]
   # @scope class
-  enum :fluid_player_status, [
+  enum :player_status, [
     :ready,
     :playing,
     :done
@@ -2524,103 +2524,103 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_player_add(player, midifile)
+  # @method player_add(player, midifile)
   # @param [FluidPlayerT] player 
   # @param [String] midifile 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_add, :fluid_player_add, [FluidPlayerT, :string], :int
+  attach_function :player_add, :fluid_player_add, [FluidPlayerT, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_add_mem(player, buffer, len)
+  # @method player_add_mem(player, buffer, len)
   # @param [FluidPlayerT] player 
   # @param [FFI::Pointer(*Void)] buffer 
   # @param [Integer] len 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_add_mem, :fluid_player_add_mem, [FluidPlayerT, :pointer, :ulong], :int
+  attach_function :player_add_mem, :fluid_player_add_mem, [FluidPlayerT, :pointer, :ulong], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_play(player)
+  # @method player_play(player)
   # @param [FluidPlayerT] player 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_play, :fluid_player_play, [FluidPlayerT], :int
+  attach_function :player_play, :fluid_player_play, [FluidPlayerT], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_stop(player)
+  # @method player_stop(player)
   # @param [FluidPlayerT] player 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_stop, :fluid_player_stop, [FluidPlayerT], :int
+  attach_function :player_stop, :fluid_player_stop, [FluidPlayerT], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_join(player)
+  # @method player_join(player)
   # @param [FluidPlayerT] player 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_join, :fluid_player_join, [FluidPlayerT], :int
+  attach_function :player_join, :fluid_player_join, [FluidPlayerT], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_set_loop(player, loop)
+  # @method player_set_loop(player, loop)
   # @param [FluidPlayerT] player 
   # @param [Integer] loop 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_set_loop, :fluid_player_set_loop, [FluidPlayerT, :int], :int
+  attach_function :player_set_loop, :fluid_player_set_loop, [FluidPlayerT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_set_midi_tempo(player, tempo)
+  # @method player_set_midi_tempo(player, tempo)
   # @param [FluidPlayerT] player 
   # @param [Integer] tempo 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_set_midi_tempo, :fluid_player_set_midi_tempo, [FluidPlayerT, :int], :int
+  attach_function :player_set_midi_tempo, :fluid_player_set_midi_tempo, [FluidPlayerT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_set_bpm(player, bpm)
+  # @method player_set_bpm(player, bpm)
   # @param [FluidPlayerT] player 
   # @param [Integer] bpm 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_set_bpm, :fluid_player_set_bpm, [FluidPlayerT, :int], :int
+  attach_function :player_set_bpm, :fluid_player_set_bpm, [FluidPlayerT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_get_status(player)
+  # @method player_get_status(player)
   # @param [FluidPlayerT] player 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_get_status, :fluid_player_get_status, [FluidPlayerT], :int
+  attach_function :player_get_status, :fluid_player_get_status, [FluidPlayerT], :int
   
   # (Not documented)
   # 
-  # @method fluid_player_set_playback_callback(player, handler, handler_data)
+  # @method player_set_playback_callback(player, handler, handler_data)
   # @param [FluidPlayerT] player 
   # @param [Proc(_callback_handle_midi_event_func_t_)] handler 
   # @param [FFI::Pointer(*Void)] handler_data 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_player_set_playback_callback, :fluid_player_set_playback_callback, [FluidPlayerT, :handle_midi_event_func_t, :pointer], :int
+  attach_function :player_set_playback_callback, :fluid_player_set_playback_callback, [FluidPlayerT, :handle_midi_event_func_t, :pointer], :int
   
   # (Not documented)
   # 
   # <em>This entry is only for documentation and no real method.</em>
   # 
-  # @method _callback_fluid_event_callback_t_(event, seq, data)
+  # @method _callback_event_callback_t_(event, seq, data)
   # @param [FluidEventT] event 
   # @param [FluidSequencerT] seq 
   # @param [FFI::Pointer(*Void)] data 
   # @return [Integer] 
   # @scope class
-  callback :fluid_event_callback_t, [FluidEventT, FluidSequencerT, :pointer], :uint
+  callback :event_callback_t, [FluidEventT, FluidSequencerT, :pointer], :uint
   
   # (Not documented)
   # 
@@ -2647,153 +2647,153 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_get_use_system_timer(seq)
+  # @method sequencer_get_use_system_timer(seq)
   # @param [FluidSequencerT] seq 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_get_use_system_timer, :fluid_sequencer_get_use_system_timer, [FluidSequencerT], :int
+  attach_function :sequencer_get_use_system_timer, :fluid_sequencer_get_use_system_timer, [FluidSequencerT], :int
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_register_client(seq, name, callback, data)
+  # @method sequencer_register_client(seq, name, callback, data)
   # @param [FluidSequencerT] seq 
   # @param [String] name 
-  # @param [Proc(_callback_fluid_event_callback_t_)] callback 
+  # @param [Proc(_callback_event_callback_t_)] callback 
   # @param [FFI::Pointer(*Void)] data 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_register_client, :fluid_sequencer_register_client, [FluidSequencerT, :string, :fluid_event_callback_t, :pointer], :short
+  attach_function :sequencer_register_client, :fluid_sequencer_register_client, [FluidSequencerT, :string, :event_callback_t, :pointer], :short
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_unregister_client(seq, id)
+  # @method sequencer_unregister_client(seq, id)
   # @param [FluidSequencerT] seq 
   # @param [Integer] id 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_sequencer_unregister_client, :fluid_sequencer_unregister_client, [FluidSequencerT, :short], :void
+  attach_function :sequencer_unregister_client, :fluid_sequencer_unregister_client, [FluidSequencerT, :short], :void
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_count_clients(seq)
+  # @method sequencer_count_clients(seq)
   # @param [FluidSequencerT] seq 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_count_clients, :fluid_sequencer_count_clients, [FluidSequencerT], :int
+  attach_function :sequencer_count_clients, :fluid_sequencer_count_clients, [FluidSequencerT], :int
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_get_client_id(seq, index)
+  # @method sequencer_get_client_id(seq, index)
   # @param [FluidSequencerT] seq 
   # @param [Integer] index 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_get_client_id, :fluid_sequencer_get_client_id, [FluidSequencerT, :int], :short
+  attach_function :sequencer_get_client_id, :fluid_sequencer_get_client_id, [FluidSequencerT, :int], :short
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_get_client_name(seq, id)
+  # @method sequencer_get_client_name(seq, id)
   # @param [FluidSequencerT] seq 
   # @param [Integer] id 
   # @return [String] 
   # @scope class
-  attach_function :fluid_sequencer_get_client_name, :fluid_sequencer_get_client_name, [FluidSequencerT, :int], :string
+  attach_function :sequencer_get_client_name, :fluid_sequencer_get_client_name, [FluidSequencerT, :int], :string
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_client_is_dest(seq, id)
+  # @method sequencer_client_is_dest(seq, id)
   # @param [FluidSequencerT] seq 
   # @param [Integer] id 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_client_is_dest, :fluid_sequencer_client_is_dest, [FluidSequencerT, :int], :int
+  attach_function :sequencer_client_is_dest, :fluid_sequencer_client_is_dest, [FluidSequencerT, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_process(seq, msec)
+  # @method sequencer_process(seq, msec)
   # @param [FluidSequencerT] seq 
   # @param [Integer] msec 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_sequencer_process, :fluid_sequencer_process, [FluidSequencerT, :uint], :void
+  attach_function :sequencer_process, :fluid_sequencer_process, [FluidSequencerT, :uint], :void
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_send_now(seq, evt)
+  # @method sequencer_send_now(seq, evt)
   # @param [FluidSequencerT] seq 
   # @param [FluidEventT] evt 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_sequencer_send_now, :fluid_sequencer_send_now, [FluidSequencerT, FluidEventT], :void
+  attach_function :sequencer_send_now, :fluid_sequencer_send_now, [FluidSequencerT, FluidEventT], :void
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_send_at(seq, evt, time, absolute)
+  # @method sequencer_send_at(seq, evt, time, absolute)
   # @param [FluidSequencerT] seq 
   # @param [FluidEventT] evt 
   # @param [Integer] time 
   # @param [Integer] absolute 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_send_at, :fluid_sequencer_send_at, [FluidSequencerT, FluidEventT, :uint, :int], :int
+  attach_function :sequencer_send_at, :fluid_sequencer_send_at, [FluidSequencerT, FluidEventT, :uint, :int], :int
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_remove_events(seq, source, dest, type)
+  # @method sequencer_remove_events(seq, source, dest, type)
   # @param [FluidSequencerT] seq 
   # @param [Integer] source 
   # @param [Integer] dest 
   # @param [Integer] type 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_sequencer_remove_events, :fluid_sequencer_remove_events, [FluidSequencerT, :short, :short, :int], :void
+  attach_function :sequencer_remove_events, :fluid_sequencer_remove_events, [FluidSequencerT, :short, :short, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_get_tick(seq)
+  # @method sequencer_get_tick(seq)
   # @param [FluidSequencerT] seq 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_get_tick, :fluid_sequencer_get_tick, [FluidSequencerT], :uint
+  attach_function :sequencer_get_tick, :fluid_sequencer_get_tick, [FluidSequencerT], :uint
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_set_time_scale(seq, scale)
+  # @method sequencer_set_time_scale(seq, scale)
   # @param [FluidSequencerT] seq 
   # @param [Float] scale 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_sequencer_set_time_scale, :fluid_sequencer_set_time_scale, [FluidSequencerT, :double], :void
+  attach_function :sequencer_set_time_scale, :fluid_sequencer_set_time_scale, [FluidSequencerT, :double], :void
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_get_time_scale(seq)
+  # @method sequencer_get_time_scale(seq)
   # @param [FluidSequencerT] seq 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_sequencer_get_time_scale, :fluid_sequencer_get_time_scale, [FluidSequencerT], :double
+  attach_function :sequencer_get_time_scale, :fluid_sequencer_get_time_scale, [FluidSequencerT], :double
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_register_fluidsynth(seq, synth)
+  # @method sequencer_register_fluidsynth(seq, synth)
   # @param [FluidSequencerT] seq 
   # @param [FluidSynthT] synth 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_register_fluidsynth, :fluid_sequencer_register_fluidsynth, [FluidSequencerT, FluidSynthT], :short
+  attach_function :sequencer_register_fluidsynth, :fluid_sequencer_register_fluidsynth, [FluidSequencerT, FluidSynthT], :short
   
   # (Not documented)
   # 
-  # @method fluid_sequencer_add_midi_event_to_buffer(data, event)
+  # @method sequencer_add_midi_event_to_buffer(data, event)
   # @param [FFI::Pointer(*Void)] data 
   # @param [FluidMidiEventT] event 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_sequencer_add_midi_event_to_buffer, :fluid_sequencer_add_midi_event_to_buffer, [:pointer, FluidMidiEventT], :int
+  attach_function :sequencer_add_midi_event_to_buffer, :fluid_sequencer_add_midi_event_to_buffer, [:pointer, FluidMidiEventT], :int
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_log_level).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:log_level).</em>
   # 
   # === Options:
   # :fluid_panic ::
@@ -2809,10 +2809,10 @@ module FluidSynth
   # :last_log_level ::
   #   < Debugging messages
   # 
-  # @method _enum_fluid_log_level_
+  # @method _enum_log_level_
   # @return [Symbol]
   # @scope class
-  enum :fluid_log_level, [
+  enum :log_level, [
     :fluid_panic,
     :fluid_err,
     :fluid_warn,
@@ -2825,57 +2825,57 @@ module FluidSynth
   # 
   # <em>This entry is only for documentation and no real method.</em>
   # 
-  # @method _callback_fluid_log_function_t_(message, data)
+  # @method _callback_log_function_t_(message, data)
   # @param [String] message 
   # @param [FFI::Pointer(*Void)] data 
   # @return [Integer] 
   # @scope class
-  callback :fluid_log_function_t, [:string, :pointer], :int
+  callback :log_function_t, [:string, :pointer], :int
   
   # (Not documented)
   # 
-  # @method fluid_set_log_function(level, fun, data)
+  # @method set_log_function(level, fun, data)
   # @param [Integer] level 
-  # @param [Proc(_callback_fluid_log_function_t_)] fun 
+  # @param [Proc(_callback_log_function_t_)] fun 
   # @param [FFI::Pointer(*Void)] data 
-  # @return [Proc(_callback_fluid_log_function_t_)] 
+  # @return [Proc(_callback_log_function_t_)] 
   # @scope class
-  attach_function :fluid_set_log_function, :fluid_set_log_function, [:int, :fluid_log_function_t, :pointer], :fluid_log_function_t
+  attach_function :set_log_function, :fluid_set_log_function, [:int, :log_function_t, :pointer], :log_function_t
   
   # (Not documented)
   # 
-  # @method fluid_default_log_function(level, message, data)
+  # @method default_log_function(level, message, data)
   # @param [Integer] level 
   # @param [String] message 
   # @param [FFI::Pointer(*Void)] data 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_default_log_function, :fluid_default_log_function, [:int, :string, :pointer], :void
+  attach_function :default_log_function, :fluid_default_log_function, [:int, :string, :pointer], :void
   
   # (Not documented)
   # 
-  # @method fluid_log(level, fmt)
+  # @method log(level, fmt)
   # @param [Integer] level 
   # @param [String] fmt 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_log, :fluid_log, [:int, :string], :int
+  attach_function :log, :fluid_log, [:int, :string], :int
   
   # (Not documented)
   # 
-  # @method fluid_is_soundfont(filename)
+  # @method is_soundfont(filename)
   # @param [String] filename 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_is_soundfont, :fluid_is_soundfont, [:string], :int
+  attach_function :is_soundfont, :fluid_is_soundfont, [:string], :int
   
   # (Not documented)
   # 
-  # @method fluid_is_midifile(filename)
+  # @method is_midifile(filename)
   # @param [String] filename 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_is_midifile, :fluid_is_midifile, [:string], :int
+  attach_function :is_midifile, :fluid_is_midifile, [:string], :int
   
   # < SoundFont sample
   # 
@@ -2893,7 +2893,7 @@ module FluidSynth
   # :amount ::
   #   (Float) < Multiplier amount
   # :next ::
-  #   (FFI::Pointer(*FluidModT)) The 'next' field allows to link modulators into a list.  It is
+  #   (FFI::Pointer(*ModT)) The 'next' field allows to link modulators into a list.  It is
   #   not used in fluid_voice.c, there each voice allocates memory for a
   #   fixed number of modulators.  Since there may be a huge number of
   #   different zones, this is more efficient.
@@ -2909,7 +2909,7 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_mod_flags).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:mod_flags).</em>
   # 
   # === Options:
   # :positive ::
@@ -2933,10 +2933,10 @@ module FluidSynth
   # :cc ::
   #   < General controller source type (#fluid_mod_src)
   # 
-  # @method _enum_fluid_mod_flags_
+  # @method _enum_mod_flags_
   # @return [Symbol]
   # @scope class
-  enum :fluid_mod_flags, [
+  enum :mod_flags, [
     :positive, 0,
     :negative, 1,
     :unipolar, 0,
@@ -2951,7 +2951,7 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_mod_src).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:mod_src).</em>
   # 
   # === Options:
   # :none ::
@@ -2969,10 +2969,10 @@ module FluidSynth
   # :pitchwheelsens ::
   #   < Pitch wheel
   # 
-  # @method _enum_fluid_mod_src_
+  # @method _enum_mod_src_
   # @return [Symbol]
   # @scope class
-  enum :fluid_mod_src, [
+  enum :mod_src, [
     :none, 0,
     :velocity, 2,
     :key, 3,
@@ -2984,117 +2984,117 @@ module FluidSynth
   
   # (Not documented)
   # 
-  # @method fluid_mod_new()
+  # @method mod_new()
   # @return [FluidModT] 
   # @scope class
-  attach_function :fluid_mod_new, :fluid_mod_new, [], FluidModT
+  attach_function :mod_new, :fluid_mod_new, [], FluidModT
   
   # (Not documented)
   # 
-  # @method fluid_mod_delete(mod)
+  # @method mod_delete(mod)
   # @param [FluidModT] mod 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_mod_delete, :fluid_mod_delete, [FluidModT], :void
+  attach_function :mod_delete, :fluid_mod_delete, [FluidModT], :void
   
   # (Not documented)
   # 
-  # @method fluid_mod_set_source1(mod, src, flags)
-  # @param [FluidModT] mod 
-  # @param [Integer] src 
-  # @param [Integer] flags 
-  # @return [nil] 
-  # @scope class
-  attach_function :fluid_mod_set_source1, :fluid_mod_set_source1, [FluidModT, :int, :int], :void
-  
-  # (Not documented)
-  # 
-  # @method fluid_mod_set_source2(mod, src, flags)
+  # @method mod_set_source1(mod, src, flags)
   # @param [FluidModT] mod 
   # @param [Integer] src 
   # @param [Integer] flags 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_mod_set_source2, :fluid_mod_set_source2, [FluidModT, :int, :int], :void
+  attach_function :mod_set_source1, :fluid_mod_set_source1, [FluidModT, :int, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_mod_set_dest(mod, dst)
+  # @method mod_set_source2(mod, src, flags)
+  # @param [FluidModT] mod 
+  # @param [Integer] src 
+  # @param [Integer] flags 
+  # @return [nil] 
+  # @scope class
+  attach_function :mod_set_source2, :fluid_mod_set_source2, [FluidModT, :int, :int], :void
+  
+  # (Not documented)
+  # 
+  # @method mod_set_dest(mod, dst)
   # @param [FluidModT] mod 
   # @param [Integer] dst 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_mod_set_dest, :fluid_mod_set_dest, [FluidModT, :int], :void
+  attach_function :mod_set_dest, :fluid_mod_set_dest, [FluidModT, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_mod_set_amount(mod, amount)
+  # @method mod_set_amount(mod, amount)
   # @param [FluidModT] mod 
   # @param [Float] amount 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_mod_set_amount, :fluid_mod_set_amount, [FluidModT, :double], :void
+  attach_function :mod_set_amount, :fluid_mod_set_amount, [FluidModT, :double], :void
   
   # (Not documented)
   # 
-  # @method fluid_mod_get_source1(mod)
+  # @method mod_get_source1(mod)
   # @param [FluidModT] mod 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_mod_get_source1, :fluid_mod_get_source1, [FluidModT], :int
+  attach_function :mod_get_source1, :fluid_mod_get_source1, [FluidModT], :int
   
   # (Not documented)
   # 
-  # @method fluid_mod_get_flags1(mod)
+  # @method mod_get_flags1(mod)
   # @param [FluidModT] mod 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_mod_get_flags1, :fluid_mod_get_flags1, [FluidModT], :int
+  attach_function :mod_get_flags1, :fluid_mod_get_flags1, [FluidModT], :int
   
   # (Not documented)
   # 
-  # @method fluid_mod_get_source2(mod)
+  # @method mod_get_source2(mod)
   # @param [FluidModT] mod 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_mod_get_source2, :fluid_mod_get_source2, [FluidModT], :int
+  attach_function :mod_get_source2, :fluid_mod_get_source2, [FluidModT], :int
   
   # (Not documented)
   # 
-  # @method fluid_mod_get_flags2(mod)
+  # @method mod_get_flags2(mod)
   # @param [FluidModT] mod 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_mod_get_flags2, :fluid_mod_get_flags2, [FluidModT], :int
+  attach_function :mod_get_flags2, :fluid_mod_get_flags2, [FluidModT], :int
   
   # (Not documented)
   # 
-  # @method fluid_mod_get_dest(mod)
+  # @method mod_get_dest(mod)
   # @param [FluidModT] mod 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_mod_get_dest, :fluid_mod_get_dest, [FluidModT], :int
+  attach_function :mod_get_dest, :fluid_mod_get_dest, [FluidModT], :int
   
   # (Not documented)
   # 
-  # @method fluid_mod_get_amount(mod)
+  # @method mod_get_amount(mod)
   # @param [FluidModT] mod 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_mod_get_amount, :fluid_mod_get_amount, [FluidModT], :double
+  attach_function :mod_get_amount, :fluid_mod_get_amount, [FluidModT], :double
   
   # (Not documented)
   # 
-  # @method fluid_mod_test_identity(mod1, mod2)
+  # @method mod_test_identity(mod1, mod2)
   # @param [FluidModT] mod1 
   # @param [FluidModT] mod2 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_mod_test_identity, :fluid_mod_test_identity, [FluidModT, FluidModT], :int
+  attach_function :mod_test_identity, :fluid_mod_test_identity, [FluidModT, FluidModT], :int
   
   # (Not documented)
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_gen_type).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:gen_type).</em>
   # 
   # === Options:
   # :startaddrofs ::
@@ -3223,10 +3223,10 @@ module FluidSynth
   # :last ::
   #   < Pitch (NOTE: Not a real SoundFont generator)
   # 
-  # @method _enum_fluid_gen_type_
+  # @method _enum_gen_type_
   # @return [Symbol]
   # @scope class
-  enum :fluid_gen_type, [
+  enum :gen_type, [
     :startaddrofs,
     :endaddrofs,
     :startloopaddrofs,
@@ -3319,7 +3319,7 @@ module FluidSynth
   #   (Float) < Change by modulators
   # :nrpn ::
   #   (Float) < Change by NRPN messages
-  class FluidGenT < FFI::Struct
+  class GenT < FFI::Struct
     layout :flags, :uchar,
            :val, :double,
            :mod, :double,
@@ -3328,7 +3328,7 @@ module FluidSynth
   
   # Enum value for 'flags' field of #fluid_gen_t (not really flags).
   # 
-  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:fluid_gen_flags).</em>
+  # <em>This entry is only for documentation and no real method. The FFI::Enum can be accessed via #enum_type(:gen_flags).</em>
   # 
   # === Options:
   # :unused ::
@@ -3338,10 +3338,10 @@ module FluidSynth
   # :abs_nrpn ::
   #   < Generator value is set
   # 
-  # @method _enum_fluid_gen_flags_
+  # @method _enum_gen_flags_
   # @return [Symbol]
   # @scope class
-  enum :fluid_gen_flags, [
+  enum :gen_flags, [
     :unused,
     :set,
     :abs_nrpn
@@ -3349,99 +3349,99 @@ module FluidSynth
   
   # < Generator is an absolute value
   # 
-  # @method fluid_gen_set_default_values(gen)
+  # @method gen_set_default_values(gen)
   # @param [FluidGenT] gen 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_gen_set_default_values, :fluid_gen_set_default_values, [FluidGenT], :int
+  attach_function :gen_set_default_values, :fluid_gen_set_default_values, [FluidGenT], :int
   
   # (Not documented)
   # 
-  # @method fluid_voice_update_param(voice, gen)
+  # @method voice_update_param(voice, gen)
   # @param [FluidVoiceT] voice 
   # @param [Integer] gen 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_voice_update_param, :fluid_voice_update_param, [FluidVoiceT, :int], :void
+  attach_function :voice_update_param, :fluid_voice_update_param, [FluidVoiceT, :int], :void
   
   # < For default modulators only, no need to check for duplicates
   # 
-  # @method fluid_voice_add_mod(voice, mod, mode)
+  # @method voice_add_mod(voice, mod, mode)
   # @param [FluidVoiceT] voice 
   # @param [FluidModT] mod 
   # @param [Integer] mode 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_voice_add_mod, :fluid_voice_add_mod, [FluidVoiceT, FluidModT, :int], :void
+  attach_function :voice_add_mod, :fluid_voice_add_mod, [FluidVoiceT, FluidModT, :int], :void
   
   # (Not documented)
   # 
-  # @method fluid_voice_gen_set(voice, gen, val)
+  # @method voice_gen_set(voice, gen, val)
   # @param [FluidVoiceT] voice 
   # @param [Integer] gen 
   # @param [Float] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_voice_gen_set, :fluid_voice_gen_set, [FluidVoiceT, :int, :float], :void
+  attach_function :voice_gen_set, :fluid_voice_gen_set, [FluidVoiceT, :int, :float], :void
   
   # (Not documented)
   # 
-  # @method fluid_voice_gen_get(voice, gen)
+  # @method voice_gen_get(voice, gen)
   # @param [FluidVoiceT] voice 
   # @param [Integer] gen 
   # @return [Float] 
   # @scope class
-  attach_function :fluid_voice_gen_get, :fluid_voice_gen_get, [FluidVoiceT, :int], :float
+  attach_function :voice_gen_get, :fluid_voice_gen_get, [FluidVoiceT, :int], :float
   
   # (Not documented)
   # 
-  # @method fluid_voice_gen_incr(voice, gen, val)
+  # @method voice_gen_incr(voice, gen, val)
   # @param [FluidVoiceT] voice 
   # @param [Integer] gen 
   # @param [Float] val 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_voice_gen_incr, :fluid_voice_gen_incr, [FluidVoiceT, :int, :float], :void
+  attach_function :voice_gen_incr, :fluid_voice_gen_incr, [FluidVoiceT, :int, :float], :void
   
   # (Not documented)
   # 
-  # @method fluid_voice_get_id(voice)
+  # @method voice_get_id(voice)
   # @param [FluidVoiceT] voice 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_voice_get_id, :fluid_voice_get_id, [FluidVoiceT], :uint
+  attach_function :voice_get_id, :fluid_voice_get_id, [FluidVoiceT], :uint
   
   # (Not documented)
   # 
-  # @method fluid_voice_is_playing(voice)
+  # @method voice_is_playing(voice)
   # @param [FluidVoiceT] voice 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_voice_is_playing, :fluid_voice_is_playing, [FluidVoiceT], :int
+  attach_function :voice_is_playing, :fluid_voice_is_playing, [FluidVoiceT], :int
   
   # (Not documented)
   # 
-  # @method fluid_voice_optimize_sample(s)
+  # @method voice_optimize_sample(s)
   # @param [FluidSampleT] s 
   # @return [Integer] 
   # @scope class
-  attach_function :fluid_voice_optimize_sample, :fluid_voice_optimize_sample, [FluidSampleT], :int
+  attach_function :voice_optimize_sample, :fluid_voice_optimize_sample, [FluidSampleT], :int
   
   # (Not documented)
   # 
-  # @method fluid_version(major, minor, micro)
+  # @method version(major, minor, micro)
   # @param [FFI::Pointer(*Int)] major 
   # @param [FFI::Pointer(*Int)] minor 
   # @param [FFI::Pointer(*Int)] micro 
   # @return [nil] 
   # @scope class
-  attach_function :fluid_version, :fluid_version, [:pointer, :pointer, :pointer], :void
+  attach_function :version, :fluid_version, [:pointer, :pointer, :pointer], :void
   
   # (Not documented)
   # 
-  # @method fluid_version_str()
+  # @method version_str()
   # @return [String] 
   # @scope class
-  attach_function :fluid_version_str, :fluid_version_str, [], :string
+  attach_function :version_str, :fluid_version_str, [], :string
   
 end
