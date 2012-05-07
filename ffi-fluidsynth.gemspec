@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Jason Jones"]
   gem.email         = ["jasonedwardjones@gmail.com"]
   gem.description   = %q{FFI bindings for the FluidSynth library.}
-  gem.summary       = %q{TODO: FFI bindings for the FluidSynth library.}
+  gem.summary       = %q{FFI bindings for the FluidSynth library.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
